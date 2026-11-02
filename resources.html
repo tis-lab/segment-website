@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resources · SEGMENT</title>
+  <meta name="description" content="Provider guides, patient handouts, and other downloadable resources about genetics eConsults from the SEGMENT network.">
+  <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <div class="mock-banner"><strong>Design mockup</strong> · Text highlighted <span class="ph">like this</span> is placeholder content</div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="SEGMENT home">
+        <img src="assets/logo-mark.svg" alt="" width="38" height="38">
+        <span class="brand-text">
+          <span class="brand-name">SEGMENT</span>
+          <span class="brand-sub">Southeastern Genetics &amp; Genomics Medicine eConsult Network</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="econsults.html">Learn about eConsults</a>
+        <a href="resources.html" aria-current="page">Resources</a>
+        <a href="about.html">About us</a>
+        <a class="btn btn-primary btn-sm" href="econsults.html#request">Request an eConsult</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / Resources</p>
+        <p class="eyebrow">Resource library</p>
+        <h1>Guides, handouts, and materials</h1>
+        <p class="lede">Download provider guides for each partner site, patient-friendly handouts, and project materials. Everything here is free to print and share.</p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:48px">
+      <div class="container">
+        <div class="res-toolbar">
+          <div class="chips" data-resource-chips role="group" aria-label="Filter by category"></div>
+          <label class="res-search">
+            <span class="visually-hidden">Search resources</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input type="search" placeholder="Search resources" data-resource-search>
+          </label>
+        </div>
+
+        <div class="res-grid" data-resources aria-live="polite"></div>
+        <div class="res-empty" data-resource-empty>No resources match your search.</div>
+
+        <div class="contribute">
+          <div>
+            <h3>Have a resource to share?</h3>
+            <p>Partner sites can add PDFs to the library. Put the file in <code>resources/pdfs/</code> and add an entry to <code>assets/resources-data.js</code>. <span class="ph">[Or contact the coordinating center.]</span></p>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="#contact">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <img src="assets/logo-mark.svg" alt="" width="38" height="38">
+          <span class="brand-text">
+            <span class="brand-name">SEGMENT</span>
+            <span class="brand-sub">SouthEastern Genetics &amp; Genomics Medicine eConsult NeTwork</span>
+          </span>
+        </a>
+        <p>Clinician-to-clinician genetics eConsults across North Carolina, South Carolina, and Georgia.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="econsults.html">Learn about eConsults</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="econsults.html#request">Request an eConsult</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Partners</h4>
+        <ul>
+          <li><a href="https://www.unchealth.org" rel="noopener">UNC Health</a></li>
+          <li><a href="https://www.ggc.org" rel="noopener">Greenwood Genetic Center</a></li>
+          <li><a href="https://www.emoryhealthcare.org" rel="noopener">Emory Healthcare</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><span class="ph">[segment-contact@unc.edu]</span></li>
+          <li><span class="ph">[Mailing address]</span></li>
+          <li>Patients: please contact your healthcare provider.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <span>Supported by the National Human Genome Research Institute of the National Institutes of Health under award number U01HG014142. The content is solely the responsibility of the authors and does not necessarily represent the official views of the NIH.</span>
+      <span>© <span data-year>2026</span> SEGMENT</span>
+    </div>
+  </footer>
+
+  <script src="assets/resources-data.js"></script>
+  <script src="assets/main.js"></script>
+</body>
+</html>

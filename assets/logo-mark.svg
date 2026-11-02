@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="SEGMENT">
+  <defs>
+    <clipPath id="chrom">
+      <rect x="15" y="6" width="10" height="12.5" rx="5"/>
+      <rect x="15" y="20.5" width="10" height="14" rx="5"/>
+    </clipPath>
+  </defs>
+  <rect width="40" height="40" rx="10" fill="#0d2233"/>
+  <g clip-path="url(#chrom)">
+    <rect x="15" y="6" width="10" height="29" fill="#ffffff"/>
+    <rect x="15" y="10" width="10" height="2" fill="#4b9cd3"/>
+    <rect x="15" y="14.5" width="10" height="1.2" fill="#4b9cd3"/>
+    <rect x="15" y="24" width="10" height="4.5" fill="#e0703f"/>
+    <rect x="15" y="30.5" width="10" height="1.5" fill="#4b9cd3"/>
+  </g>
+</svg>
