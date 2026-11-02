@@ -29,84 +29,65 @@
     return el;
   }
 
-  // ---------- Decorative karyotype (hero) ----------
-  // [name, length in Mb, centromere position as fraction of length]
-  const CHROMS = [
-    ["1", 248, 0.5], ["2", 242, 0.39], ["3", 198, 0.46], ["4", 190, 0.26], ["5", 181, 0.27],
-    ["6", 171, 0.35], ["7", 159, 0.38], ["8", 145, 0.31], ["9", 138, 0.31], ["10", 134, 0.3],
-    ["11", 135, 0.39], ["12", 133, 0.27], ["13", 114, 0.15], ["14", 107, 0.16], ["15", 102, 0.17],
-    ["16", 90, 0.41], ["17", 83, 0.3], ["18", 80, 0.21], ["19", 59, 0.45], ["20", 64, 0.44],
-    ["21", 47, 0.26], ["22", 51, 0.28], ["X", 156, 0.39],
-  ];
-  // Highlighted "segment": NF1 at 17q11.2, matching the example eConsult
-  const HIGHLIGHT = { chrom: "17", at: 0.36, size: 0.07 };
-
-  function seeded(seed) {
-    return function () {
-      seed |= 0;
-      seed = (seed + 0x6d2b79f5) | 0;
-      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
-      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  // ---------- Hero scene: play the eConsult exchange ----------
+  // Question, typing dots, then the answer. Without motion the scene simply shows the finished exchange.
+  const scene = document.getElementById("scene");
+  if (scene) {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const play = () => {
+      scene.classList.remove("play");
+      void scene.offsetWidth; // restart the CSS animations
+      scene.classList.add("play");
     };
-  }
-
-  function renderKaryotype(host) {
-    const W = 12, GAP = 9, H = 150, TOP = 4, maxLen = 248;
-    const width = CHROMS.length * (W + GAP) - GAP;
-    const svg = svgEl("svg", { viewBox: `0 0 ${width} ${H + 26}`, class: "karyotype", "aria-hidden": "true" });
-    const defs = svgEl("defs", {});
-    svg.appendChild(defs);
-    const rnd = seeded(17);
-
-    CHROMS.forEach(([name, len, cen], i) => {
-      const x = i * (W + GAP);
-      const h = (len / maxLen) * H;
-      const y = TOP + H - h;
-      const pH = Math.max(h * cen - 1.5, 4);
-      const qY = y + h * cen + 1.5;
-      const qH = h * (1 - cen) - 1.5;
-
-      const clip = svgEl("clipPath", { id: `k-clip-${i}` });
-      clip.appendChild(svgEl("rect", { x, y, width: W, height: pH, rx: W / 2 }));
-      clip.appendChild(svgEl("rect", { x, y: qY, width: W, height: qH, rx: W / 2 }));
-      defs.appendChild(clip);
-
-      const g = svgEl("g", { "clip-path": `url(#k-clip-${i})` });
-      g.appendChild(svgEl("rect", { x, y, width: W, height: h, fill: "#e8f0f6" }));
-      let pos = y + 2 + rnd() * 3;
-      while (pos < y + h - 2) {
-        const bh = 1.5 + rnd() * 5;
-        if (rnd() > 0.35) {
-          g.appendChild(svgEl("rect", {
-            x, y: pos, width: W, height: bh,
-            fill: "#4b9cd3", opacity: (0.25 + rnd() * 0.65).toFixed(2),
-          }));
-        }
-        pos += bh + 2 + rnd() * 6;
-      }
-      if (name === HIGHLIGHT.chrom) {
-        g.appendChild(svgEl("rect", {
-          x, y: y + h * HIGHLIGHT.at, width: W, height: h * HIGHLIGHT.size,
-          fill: "#e0703f", class: "k-highlight",
-        }));
-      }
-      svg.appendChild(g);
-
-      const label = svgEl("text", {
-        x: x + W / 2, y: TOP + H + 18, "text-anchor": "middle",
-        "font-size": 9, "font-family": "Inter, sans-serif", "font-weight": 600,
-        fill: name === HIGHLIGHT.chrom ? "#f0a185" : "#6f8aa0",
+    if (!reduce.matches) play();
+    // Safety net: if animations never run (a hidden tab, a screenshot), still show the finished exchange.
+    setTimeout(() => scene.classList.remove("play"), 4500);
+    const replay = document.getElementById("replay");
+    if (replay) {
+      replay.hidden = reduce.matches;
+      let timer = null;
+      replay.addEventListener("click", () => {
+        play();
+        clearTimeout(timer);
+        timer = setTimeout(() => scene.classList.remove("play"), 4500);
       });
-      label.textContent = name;
-      svg.appendChild(label);
-    });
-
-    host.prepend(svg);
+    }
   }
 
-  const karyoHost = document.querySelector("[data-karyotype]");
-  if (karyoHost) renderKaryotype(karyoHost);
+  // ---------- "On this page" bar: underline the section being read ----------
+  // The current section is the last one whose top has scrolled up under the header and bar.
+  const toc = document.querySelector(".toc");
+  if (toc) {
+    const header = document.querySelector(".site-header");
+    const list = toc.querySelector("ol");
+    const links = [...toc.querySelectorAll('a[href^="#"]')];
+    const byId = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
+    const sections = [...byId.keys()].map((id) => document.getElementById(id)).filter(Boolean);
+    let shown = null;
+    const update = () => {
+      const line = (header ? header.offsetHeight : 0) + toc.offsetHeight + 24;
+      let current = null;
+      for (const s of sections) {
+        if (s.getBoundingClientRect().top <= line) current = s;
+        else break;
+      }
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2;
+      if (atBottom && current) current = sections[sections.length - 1];
+      if (current === shown) return;
+      shown = current;
+      links.forEach((a) => a.removeAttribute("aria-current"));
+      if (!current) return;
+      const link = byId.get(current.id);
+      link.setAttribute("aria-current", "location");
+      // on narrow screens the row scrolls sideways; keep the current link in view
+      if (list.scrollWidth > list.clientWidth) {
+        list.scrollLeft = link.offsetLeft - list.offsetLeft - list.clientWidth / 2 + link.offsetWidth / 2;
+      }
+    };
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
 
   // ---------- Partner map leader lines (About page) ----------
   const diagram = document.querySelector(".partner-diagram");

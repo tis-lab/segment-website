@@ -7,11 +7,11 @@
   <meta name="robots" content="noindex, nofollow">
   <title>SEGMENT · Southeastern Genetics &amp; Genomics Medicine eConsult Network</title>
   <meta name="description" content="SEGMENT connects clinicians in North Carolina, South Carolina and Georgia with geneticists and genetic counselors through secure, clinician-to-clinician eConsults.">
-  <link rel="icon" href="assets/favicon.svg?v=20261102-4" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.svg?v=20261102-9" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@600&family=Montserrat:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20261102-4">
+  <link rel="stylesheet" href="assets/styles.css?v=20261102-9">
 </head>
 <body>
   <div class="mock-banner"><strong>Design mockup</strong> · Text highlighted <span class="ph">like this</span> is placeholder content</div>
@@ -19,10 +19,10 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="SEGMENT home">
-        <img src="assets/logo-mark.svg?v=20261102-4" alt="" width="53" height="44">
+        <img src="assets/logo-mark.svg?v=20261102-9" alt="" width="53" height="44">
         <span class="brand-text">
           <span class="brand-name">SEG<span class="k-gm">M</span>EN<span class="k-nt">T</span></span>
-          <span class="brand-sub">Southeastern Genetics &amp; Genomics Medicine eConsult Network</span>
+          <span class="brand-sub"><u>S</u>outh<u>E</u>astern <u>G</u>enetics &amp; Genomics <u>M</u>edicine <u>E</u>consult <u>N</u>e<u>T</u>work</span>
         </span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
@@ -54,38 +54,90 @@
           </ul>
         </div>
 
-        <div class="hero-visual" data-karyotype>
-          <div class="karyotype-caption">
-            <span>Human karyotype · 1–22, X</span>
-            <span class="locus">NF1 · 17q11.2</span>
-          </div>
-          <figure class="consult-card" aria-label="Fictional example of an eConsult">
-            <div class="cc-head">
-              <span class="cc-tag">eConsult · Rare disease diagnosis</span>
-              <span class="cc-status">● Answered in 2 days</span>
+        <figure class="scene" id="scene" aria-label="Fictional example: a family physician sends a genetics question and a SEGMENT geneticist answers">
+          <div class="chat">
+            <div class="msg msg-q">
+              <p class="who">Family physician · rural NC</p>
+              <p>7-year-old with developmental delay, macrocephaly, and six café-au-lait macules. Which test should I order, and does she need a genetics visit?</p>
+              <svg class="tail" viewBox="0 0 30 24" aria-hidden="true"><path d="M6 0 Q8 15 0 24 Q17 20 30 0 Z" fill="currentColor"/></svg>
             </div>
-            <div class="cc-msg cc-q">
-              <div class="cc-avatar" aria-hidden="true">FM</div>
-              <div>
-                <p class="cc-who">Referring clinician · Family medicine, rural NC</p>
-                <p>7-year-old with developmental delay, macrocephaly, and six café-au-lait macules. No family history. Which test should I order, and does she need an in-person genetics visit?</p>
-              </div>
-            </div>
-            <div class="cc-msg cc-a">
-              <div class="cc-avatar cc-avatar-expert" aria-hidden="true">MG</div>
-              <div class="cc-body">
-                <p class="cc-who">SEGMENT geneticist</p>
-                <p>These findings suggest NF1. We recommend NF1/SPRED1 testing and an ophthalmology exam first. She doesn't need a genetics visit yet. Send us the results through this eConsult and we'll help you interpret them.</p>
-                <ul class="cc-recs">
-                  <li><b>Order</b> NF1/SPRED1 panel</li>
-                  <li><b>Refer</b> Ophthalmology</li>
-                  <li><b>Visit</b> Not needed yet</li>
+            <div class="answer-slot">
+              <div class="typing" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="msg msg-a">
+                <p class="who">SEGMENT geneticist · 2 days later</p>
+                <p>This looks like NF1. Order NF1/SPRED1 testing and an eye exam; she doesn't need a genetics visit yet. Send us the results and we'll help you interpret them.</p>
+                <ul class="recs">
+                  <li>Order NF1/SPRED1 panel</li>
+                  <li>Refer to ophthalmology</li>
+                  <li>Visit not needed yet</li>
                 </ul>
+                <svg class="tail" viewBox="0 0 30 24" aria-hidden="true"><path d="M6 0 Q8 15 0 24 Q17 20 30 0 Z" fill="currentColor"/></svg>
               </div>
             </div>
-            <figcaption>Fictional example for illustration</figcaption>
-          </figure>
-        </div>
+          </div>
+
+          <svg class="people" viewBox="0 0 520 220" aria-hidden="true">
+            <!-- Family physician, facing right -->
+            <circle cx="120" cy="128" r="90" style="fill: var(--canvas-2)"/>
+            <rect x="110" y="128" width="20" height="26" rx="7" fill="#8d5a3b"/>
+            <path d="M50 214 C50 176 72 156 102 151 L138 151 C168 156 190 176 190 214 Z" fill="#fff" stroke="#cfd8df" stroke-width="2"/>
+            <path d="M108 151 L120 176 L132 151 Z" fill="#4b9cd3"/>
+            <path d="M108 151 L117 194 M132 151 L123 194" stroke="#cfd8df" stroke-width="2" fill="none"/>
+            <path d="M110 155 C104 172 110 184 120 186 C130 184 136 172 130 155" stroke="#33495b" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="120" cy="190" r="5" fill="#33495b"/>
+            <g fill="#1f1a17"><circle cx="99" cy="92" r="18"/><circle cx="113" cy="80" r="18"/><circle cx="131" cy="78" r="17"/><circle cx="145" cy="86" r="13"/><circle cx="94" cy="110" r="14"/><circle cx="98" cy="126" r="10"/></g>
+            <circle cx="122" cy="108" r="30" fill="#8d5a3b"/>
+            <g fill="#1f1a17"><circle cx="106" cy="83" r="12"/><circle cx="121" cy="78" r="12"/><circle cx="137" cy="82" r="10"/><circle cx="99" cy="98" r="9"/></g>
+            <circle cx="102" cy="112" r="5" fill="#7a4c31"/>
+            <circle cx="133" cy="108" r="2.7" fill="#1b1b1b"/><circle cx="145" cy="107" r="2.7" fill="#1b1b1b"/>
+            <path d="M134 120 Q141 125 148 119" stroke="#1b1b1b" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M164 168 Q186 178 204 190" stroke="#cfd8df" stroke-width="18" fill="none" stroke-linecap="round"/>
+            <path d="M164 168 Q186 178 204 190" stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <circle cx="207" cy="191" r="6.5" fill="#8d5a3b"/>
+            <rect x="18" y="198" width="250" height="12" rx="6" fill="#cfd8df"/>
+            <rect x="176" y="190" width="80" height="8" rx="3" fill="#8a9aa8"/>
+            <path d="M252 194 L240 136" stroke="#5a6a78" stroke-width="7" stroke-linecap="round"/>
+            <path d="M246 191 L235 139" stroke="#9fd6cf" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- The SEGMENT network in between -->
+            <image href="assets/logo-mark.svg?v=20261102-9" x="232" y="64" width="56" height="46"/>
+            <path d="M228 100 C214 112 216 124 236 132" stroke="#9fb0bd" stroke-width="2" stroke-dasharray="3 5" fill="none" stroke-linecap="round"/>
+            <path d="M292 100 C306 112 304 124 284 132" stroke="#9fb0bd" stroke-width="2" stroke-dasharray="3 5" fill="none" stroke-linecap="round"/>
+
+            <!-- SEGMENT geneticist, facing left -->
+            <circle cx="400" cy="128" r="90" style="fill: var(--canvas-2)"/>
+            <rect x="390" y="128" width="20" height="26" rx="7" fill="#f1c3a0"/>
+            <path d="M330 214 C330 176 352 156 382 151 L418 151 C448 156 470 176 470 214 Z" fill="#fff" stroke="#cfd8df" stroke-width="2"/>
+            <path d="M388 151 L400 176 L412 151 Z" fill="#0f766e"/>
+            <path d="M388 151 L397 194 M412 151 L403 194" stroke="#cfd8df" stroke-width="2" fill="none"/>
+            <path d="M412 153 L433 172" stroke="#2f8f86" stroke-width="2" fill="none"/>
+            <rect x="426" y="172" width="17" height="21" rx="3" fill="#e8edf1" stroke="#cfd8df" stroke-width="1.5"/>
+            <rect x="429.5" y="176" width="10" height="3.5" rx="1.5" fill="#2f8f86"/>
+            <circle cx="398" cy="108" r="30" fill="#f1c3a0"/>
+            <path d="M368 103 C366 80 384 70 402 71 C422 72 432 86 430 103 C424 94 414 90 404 90 C392 90 380 92 372 100 Z" fill="#5b3d26"/>
+            <path d="M418 86 C430 94 432 110 427 122 L421 120 C424 108 422 97 414 91 Z" fill="#5b3d26"/>
+            <circle cx="418" cy="112" r="5" fill="#e2ae88"/>
+            <circle cx="386" cy="108" r="2.7" fill="#1b1b1b"/><circle cx="373" cy="107" r="2.7" fill="#1b1b1b"/>
+            <g stroke="#23394b" stroke-width="2" fill="none"><circle cx="386" cy="108" r="7"/><circle cx="372" cy="107" r="7"/><path d="M379 107 L379 107 M393 108 L414 110"/></g>
+            <path d="M372 119 Q379 125 386 120" stroke="#1b1b1b" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <path d="M356 168 Q334 178 316 190" stroke="#cfd8df" stroke-width="18" fill="none" stroke-linecap="round"/>
+            <path d="M356 168 Q334 178 316 190" stroke="#fff" stroke-width="14" fill="none" stroke-linecap="round"/>
+            <circle cx="313" cy="191" r="6.5" fill="#f1c3a0"/>
+            <rect x="252" y="198" width="250" height="12" rx="6" fill="#cfd8df"/>
+            <rect x="264" y="190" width="80" height="8" rx="3" fill="#8a9aa8"/>
+            <path d="M268 194 L280 136" stroke="#5a6a78" stroke-width="7" stroke-linecap="round"/>
+            <path d="M274 191 L285 139" stroke="#9fd6cf" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+
+          <div class="roles">
+            <span>Family physician<small>Rural North Carolina</small></span>
+            <span>SEGMENT geneticist<small>Partner site</small></span>
+          </div>
+          <figcaption class="scene-foot">
+            <span>Fictional example for illustration</span>
+            <button type="button" class="replay" id="replay">Replay</button>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -245,10 +297,10 @@
     <div class="container footer-grid">
       <div>
         <a class="brand" href="index.html" aria-label="SEGMENT home">
-          <img src="assets/logo-mark-dark.svg?v=20261102-4" alt="" width="53" height="44">
+          <img src="assets/logo-mark-dark.svg?v=20261102-9" alt="" width="53" height="44">
           <span class="brand-text">
             <span class="brand-name">SEG<span class="k-gm">M</span>EN<span class="k-nt">T</span></span>
-            <span class="brand-sub">SouthEastern Genetics &amp; Genomics Medicine eConsult NeTwork</span>
+            <span class="brand-sub"><u>S</u>outh<u>E</u>astern <u>G</u>enetics &amp; Genomics <u>M</u>edicine <u>E</u>consult <u>N</u>e<u>T</u>work</span>
           </span>
         </a>
         <p>Clinician-to-clinician genetics eConsults across North Carolina, South Carolina, and Georgia.</p>
@@ -285,6 +337,6 @@
     </div>
   </footer>
 
-  <script src="assets/main.js?v=20261102-4"></script>
+  <script src="assets/main.js?v=20261102-9"></script>
 </body>
 </html>
