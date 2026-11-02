@@ -167,17 +167,19 @@ p { margin: 0 0 1em; }
 }
 .brand img { width: 86px; height: 71px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
-/* Wordmark from the logo: Barlow Condensed with hand-tuned G-M and N-T spacing */
+/* Wordmark from the logo: Barlow Condensed, the E's drawn as three bars, hand-tuned G-M and N-T spacing */
 .brand-name {
   font-family: "Barlow Condensed", var(--font-sans);
   font-weight: 600;
   font-size: 2.6rem;
   line-height: 1;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.07em;
   color: #120f31;
+  --bar-e: #2f8f86;
 }
+.brand-name .bar-e { display: inline-block; width: 0.42em; height: 0.7em; margin-right: 0.07em; vertical-align: baseline; fill: var(--bar-e); }
 .brand-name .k-gm { margin-left: 0.02em; }
-.brand-name .k-nt { margin-left: -0.015em; }
+.brand-name .k-nt { margin-left: -0.03em; }
 .brand-sub { font-family: "Montserrat", var(--font-sans); font-weight: 500; font-size: 0.86rem; line-height: 1.35; color: var(--muted); letter-spacing: 0.01em; margin-top: 6px; max-width: 20em; }
 /* The letters that spell SEGMENT, wherever the name is written out */
 .brand-sub u { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; font-weight: 700; color: var(--ink); }
@@ -759,7 +761,7 @@ p { margin: 0 0 1em; }
   padding: 64px 24px 40px;
 }
 .site-footer .brand { color: #fff; margin-bottom: 16px; }
-.site-footer .brand-name { color: #3ba99e; }
+.site-footer .brand-name { color: #3ba99e; --bar-e: #ffffff; }
 .site-footer .brand img { width: 62px; height: 51px; }
 .site-footer .brand-name { font-size: 2rem; }
 .site-footer .brand-sub { font-size: 0.78rem; }
