@@ -45,3 +45,11 @@ The logo mark (two overlapping speech bubbles with DNA in the overlap) is drawn 
 ```bash
 python3 tools/render_logo.py
 ```
+
+## Cache busting
+
+Pages link to `assets/` files with a `?v=` tag (for example `assets/styles.css?v=20261102-4`). GitHub Pages lets browsers cache files for 10 minutes, so after changing the logo, styles or scripts, bump the tag in all four HTML files so visitors get the new version right away:
+
+```bash
+sed -i '' 's/?v=20261102-4/?v=NEW-TAG/g' *.html
+```
