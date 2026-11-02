@@ -105,11 +105,12 @@ p { margin: 0 0 1em; }
 .mock-banner {
   background: var(--ink);
   color: #c9d6e0;
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   text-align: center;
-  padding: 6px 16px;
+  padding: 10px 16px;
 }
 .mock-banner strong { color: #fff; font-weight: 600; }
+@media (max-width: 560px) { .mock-banner { font-size: 0.88rem; padding: 8px 16px; } }
 
 /* ---------- Buttons ---------- */
 .btn {
