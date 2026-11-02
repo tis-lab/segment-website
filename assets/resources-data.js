@@ -18,11 +18,7 @@ window.SEGMENT_RESOURCES = [
     category: "provider",
     description:
       "What a genetics eConsult is, why to request one, how to submit through the GGC Provider Portal, best practices, eConsults vs. referrals, and FAQs.",
-    file: "resources/pdfs/ggc-genetics-econsults-provider-guide.pdf",
-    thumb: "resources/thumbs/ggc-genetics-econsults-provider-guide.jpg",
-    pages: 5,
-    size: "2.2 MB",
-    updated: "2026",
+    placeholder: true,
   },
   {
     title: "Genetics eConsults at UNC Health: A guide for North Carolina providers",
