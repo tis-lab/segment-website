@@ -13,7 +13,7 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 # halo = the background the mark sits on; it cuts the gaps where strands cross
 THEMES = {
-    "light": dict(s1="#0f766e", s2="#0d2233", rung="#c3cfd8", halo="#f7f3ec",
+    "light": dict(s1="#0f766e", s2="#0d2233", rung="#c3cfd8", halo="#f4f6f8",
                   unc="#4b9cd3", ggc="#00843d", emory="#012169"),
     "dark": dict(s1="#3ba99e", s2="#e8f0f6", rung="#3f5a70", halo="#0d2233",
                  unc="#4b9cd3", ggc="#1fa25a", emory="#7d93d6"),
