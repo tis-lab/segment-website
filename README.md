@@ -37,3 +37,11 @@ python3 tools/render_map.py states-10m.json se-map.svg
 ```
 
 Replace the `<svg class="se-map">…</svg>` element in `about.html` with the output. Marker locations, map bounds and state labels are set at the top of `tools/render_map.py`.
+
+## Regenerate the logo
+
+The helix-ring logo (header mark, dark footer mark and browser-tab icon) is drawn by a script; colors and proportions are at the top of it:
+
+```bash
+python3 tools/render_logo.py
+```
