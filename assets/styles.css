@@ -1091,7 +1091,7 @@ p { margin: 0 0 1em; }
 }
 .acronym span { white-space: nowrap; margin-right: 0.3em; }
 .acronym b { color: var(--teal); font-weight: 600; }
-.acronym b.seg { color: var(--coral); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
+.acronym b.seg { color: #120f31; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
 
 /* About page head: the expanded name is the heading, the mission sits beneath it */
 .page-head h1.acronym { font-size: clamp(2rem, 4.6vw, 3.3rem); line-height: 1.15; max-width: none; margin: 0 0 36px; }
