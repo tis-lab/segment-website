@@ -40,7 +40,7 @@ Replace the `<svg class="se-map">…</svg>` element in `about.html` with the out
 
 ## Regenerate the logo
 
-The helix-ring logo (header mark, dark footer mark and browser-tab icon) is drawn by a script; colors and proportions are at the top of it:
+The logo mark (two overlapping speech bubbles with DNA in the overlap) is drawn by a script that writes the header mark, the dark footer mark and the browser-tab icon; colors and shapes are at the top of it:
 
 ```bash
 python3 tools/render_logo.py

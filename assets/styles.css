@@ -164,15 +164,20 @@ p { margin: 0 0 1em; }
   text-decoration: none;
   color: var(--ink);
 }
-.brand img { width: 46px; height: 46px; }
+.brand img { width: 53px; height: 44px; }
 .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+/* Wordmark from the logo: Barlow Condensed with hand-tuned G-M and N-T spacing */
 .brand-name {
-  font-family: "Space Grotesk", var(--font-sans);
+  font-family: "Barlow Condensed", var(--font-sans);
   font-weight: 600;
-  font-size: 1.3rem;
-  letter-spacing: 0.05em;
+  font-size: 1.6rem;
+  line-height: 1;
+  letter-spacing: 0.045em;
+  color: #120f31;
 }
-.brand-sub { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.01em; }
+.brand-name .k-gm { margin-left: 0.02em; }
+.brand-name .k-nt { margin-left: -0.015em; }
+.brand-sub { font-family: "Montserrat", var(--font-sans); font-weight: 500; font-size: 0.7rem; color: var(--muted); letter-spacing: 0.01em; margin-top: 3px; }
 
 .site-nav { display: flex; align-items: center; gap: 4px; }
 .site-nav a:not(.btn) {
@@ -755,6 +760,7 @@ p { margin: 0 0 1em; }
   padding: 64px 24px 40px;
 }
 .site-footer .brand { color: #fff; margin-bottom: 16px; }
+.site-footer .brand-name { color: #3ba99e; }
 .site-footer .brand-sub { color: #8fa7ba; display: block; }
 .site-footer h4 {
   color: #fff;
