@@ -766,6 +766,7 @@ p { margin: 0 0 1em; }
 .site-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .site-footer a { color: #c9d6e0; text-decoration: none; }
 .site-footer a:hover { color: #fff; text-decoration: underline; }
+.site-footer .footer-legal a { color: inherit; text-decoration: underline; }
 .footer-legal {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 22px 24px 32px;
@@ -1209,6 +1210,8 @@ p { margin: 0 0 1em; }
   padding: 16px 18px;
   text-align: center;
 }
+a.funding-badge { text-decoration: none; transition: background-color 0.15s; }
+a.funding-badge:hover { background: var(--ink-3); color: #fff; }
 .funding-badge small { display: block; font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; color: #8fd0c8; margin-top: 4px; }
 .funding p { margin: 0; color: var(--muted); font-size: 0.95rem; }
 
