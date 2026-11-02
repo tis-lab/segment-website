@@ -33,25 +33,9 @@
   // Question, typing dots, then the answer. Without motion the scene simply shows the finished exchange.
   const scene = document.getElementById("scene");
   if (scene) {
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const play = () => {
-      scene.classList.remove("play");
-      void scene.offsetWidth; // restart the CSS animations
-      scene.classList.add("play");
-    };
-    if (!reduce.matches) play();
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) scene.classList.add("play");
     // Safety net: if animations never run (a hidden tab, a screenshot), still show the finished exchange.
     setTimeout(() => scene.classList.remove("play"), 4500);
-    const replay = document.getElementById("replay");
-    if (replay) {
-      replay.hidden = reduce.matches;
-      let timer = null;
-      replay.addEventListener("click", () => {
-        play();
-        clearTimeout(timer);
-        timer = setTimeout(() => scene.classList.remove("play"), 4500);
-      });
-    }
   }
 
   // ---------- "On this page" bar: underline the section being read ----------
