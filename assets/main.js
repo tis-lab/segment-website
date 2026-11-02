@@ -151,7 +151,7 @@
       });
     }
 
-    diagram.querySelectorAll(".partner-card[data-partner], .marker[data-partner]").forEach((el) => {
+    diagram.querySelectorAll(".partner-card[data-partner], .marker[data-partner], .state[data-partner]").forEach((el) => {
       el.addEventListener("mouseenter", () => setActive(el.dataset.partner));
       el.addEventListener("mouseleave", () => setActive(null));
     });

@@ -888,10 +888,11 @@ p { margin: 0 0 1em; }
   .pillar { padding: 24px; }
 }
 
-/* Partner identity colours (map markers, leader lines, cards) */
-[data-partner="unc"] { --p: #2f7fb8; }
-[data-partner="ggc"] { --p: #1e8a4a; }
-[data-partner="emory"] { --p: #1b3a7a; }
+/* Partner identity colours: --p is the text-safe accent (markers, lines, cards),
+   --brand is the logo colour (map state fills) */
+[data-partner="unc"] { --p: #2f7fb8; --brand: #4b9cd3; }
+[data-partner="ggc"] { --p: #1e8a4a; --brand: #00843d; }
+[data-partner="emory"] { --p: #1b3a7a; --brand: #012169; }
 
 .wordmark {
   font-family: var(--font-serif);
@@ -1073,16 +1074,21 @@ p { margin: 0 0 1em; }
   z-index: 1;
 }
 .se-map { width: 100%; height: auto; border-radius: 14px; }
-.se-map .water { fill: #d3e8f5; }
+.se-map .water { fill: #e6eef3; }
 .se-map .state { fill: #f7f2e4; stroke: #b6ad9a; stroke-width: 0.8; stroke-linejoin: round; transition: fill 0.2s; }
-.se-map .state.net { fill: #f1e4c3; stroke: #9d927b; }
+.se-map .state[data-partner] {
+  fill: color-mix(in srgb, var(--brand) 40%, white);
+  stroke: color-mix(in srgb, var(--brand) 70%, black);
+  stroke-width: 1;
+}
+.se-map .state[data-partner].is-active { fill: color-mix(in srgb, var(--brand) 58%, white); }
 .se-map .state-label {
   font: 600 12px var(--font-sans);
   letter-spacing: 0.12em;
   fill: #a29a86;
   text-anchor: middle;
 }
-.se-map .state-label.net { fill: #7d735d; }
+.se-map .state-label[data-partner] { fill: color-mix(in srgb, var(--brand) 75%, black); }
 .se-map .marker .dot { fill: var(--p); stroke: #fff; stroke-width: 2.5; }
 .se-map .marker .halo { fill: var(--p); opacity: 0.16; transition: opacity 0.2s, transform 0.2s; transform-box: fill-box; transform-origin: center; }
 .se-map .marker .pulse { fill: none; stroke: var(--p); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
@@ -1150,8 +1156,10 @@ p { margin: 0 0 1em; }
 .map-legend-light { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 28px; font-size: 0.85rem; color: var(--muted); justify-content: center; }
 .map-legend-light span { display: inline-flex; align-items: center; gap: 8px; }
 .map-legend-light i { width: 14px; height: 14px; border-radius: 4px; display: inline-block; border: 1px solid #9d927b; }
-.map-legend-light .l-net { background: #f1e4c3; }
-.map-legend-light .l-other { background: #f7f2e4; border-color: #c9c1ae; }
+.map-legend-light .l-state {
+  background: color-mix(in srgb, var(--brand) 40%, white);
+  border-color: color-mix(in srgb, var(--brand) 70%, black);
+}
 
 @media (max-width: 1060px) {
   .partner-diagram { grid-template-columns: 1fr 1fr; grid-template-rows: auto; gap: 16px; }

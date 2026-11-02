@@ -98,7 +98,8 @@ ABBR = {
     "Illinois": "IL", "Missouri": "MO", "District of Columbia": "DC", "Pennsylvania": "PA",
     "New Jersey": "NJ",
 }
-NETWORK = {"NC", "SC", "GA"}
+# network states, tagged with the partner that serves them
+NETWORK = {"NC": "unc", "SC": "ggc", "GA": "emory"}
 
 state_paths = []
 for g in topo["objects"]["states"]["geometries"]:
@@ -108,7 +109,8 @@ for g in topo["objects"]["states"]["geometries"]:
         continue
     ab = ABBR.get(name, name)
     cls = "state net" if ab in NETWORK else "state"
-    state_paths.append(f'<path class="{cls}" data-state="{ab}" d="{d}"><title>{name}</title></path>')
+    partner = f' data-partner="{NETWORK[ab]}"' if ab in NETWORK else ""
+    state_paths.append(f'<path class="{cls}" data-state="{ab}"{partner} d="{d}"><title>{name}</title></path>')
 
 LABELS = {
     "TN": (-86.4, 35.8), "NC": (-80.9, 35.55), "SC": (-80.55, 33.55), "GA": (-83.5, 32.35),
@@ -118,7 +120,8 @@ label_svg = []
 for ab, (lon, lat) in LABELS.items():
     x, y = project(lon, lat)
     cls = "state-label net" if ab in NETWORK else "state-label"
-    label_svg.append(f'<text class="{cls}" x="{x:.1f}" y="{y:.1f}">{ab}</text>')
+    partner = f' data-partner="{NETWORK[ab]}"' if ab in NETWORK else ""
+    label_svg.append(f'<text class="{cls}"{partner} x="{x:.1f}" y="{y:.1f}">{ab}</text>')
 
 PARTNERS = [
     # key, lon, lat, city, hub?, label dx/anchor
