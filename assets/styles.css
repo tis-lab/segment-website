@@ -1008,15 +1008,6 @@ p { margin: 0 0 1em; }
 .benefit.lead { background: var(--teal); border-color: var(--teal); }
 .benefit.lead .benefit-icon { background: rgba(255, 255, 255, 0.16); color: #fff; }
 .benefit.lead p { color: #d9efec; }
-.benefit .stat {
-  font-family: var(--font-serif);
-  font-size: 2.6rem;
-  font-weight: 600;
-  line-height: 1;
-  color: #fff;
-  margin: 4px 0 10px;
-}
-.benefit .stat small { font-size: 1rem; font-family: var(--font-sans); font-weight: 500; color: #d9efec; margin-left: 6px; }
 
 .steps.five { grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .steps.five .step { padding: 24px 20px; }
