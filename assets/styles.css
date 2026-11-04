@@ -1086,9 +1086,9 @@ p { margin: 0 0 1em; }
 
 /* About page head: the expanded name is the heading, the mission sits beneath it */
 .page-head h1.acronym { font-size: clamp(2rem, 4.6vw, 3.3rem); line-height: 1.15; max-width: none; margin: 0 0 36px; }
-.mission { max-width: 760px; display: grid; gap: 12px; }
+.mission { display: grid; gap: 12px; }
 .mission h2 { font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin: 0; }
-.mission .lede { margin: 0; }
+.mission .lede { margin: 0; max-width: none; }
 
 /* Partner map diagram */
 .partner-diagram {
