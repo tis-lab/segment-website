@@ -1,5 +1,5 @@
 # segment-website
-A website for the SEGMENT project: SouthEastern Genetics & Genomics Medicine Econsult NeTwork.
+A website for the SEGMENT project: SouthEastern Genomics Medicine Econsult NeTwork.
 
 This is a static design mockup (plain HTML/CSS/JS, no build step). Text highlighted in yellow on the pages is placeholder content.
 
