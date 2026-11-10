@@ -44,9 +44,11 @@ def write(name, body, view_box):
 
 
 MARK_BOX = "3 12 94 78"  # the bubbles span x 4-96, y 14-88
-write("logo-mark.svg", mark(THEMES["light"], "lens-cut"), MARK_BOX)
-write("logo-mark-dark.svg", mark(THEMES["dark"], "lens-cut"), MARK_BOX)
-write("favicon.svg",
-      f'<rect width="100" height="100" rx="22" fill="{INDIGO}"/>\n'
-      f'  <g transform="translate(6 7) scale(0.88)">\n  {mark(THEMES["dark"], "lens-cut")}\n  </g>',
-      "0 0 100 100")
+
+if __name__ == "__main__":
+    write("logo-mark.svg", mark(THEMES["light"], "lens-cut"), MARK_BOX)
+    write("logo-mark-dark.svg", mark(THEMES["dark"], "lens-cut"), MARK_BOX)
+    write("favicon.svg",
+          f'<rect width="100" height="100" rx="22" fill="{INDIGO}"/>\n'
+          f'  <g transform="translate(6 7) scale(0.88)">\n  {mark(THEMES["dark"], "lens-cut")}\n  </g>',
+          "0 0 100 100")

@@ -53,3 +53,16 @@ Pages link to `assets/` files with a `?v=` tag (for example `assets/styles.css?v
 ```bash
 sed -i '' 's/?v=20261102-4/?v=NEW-TAG/g' *.html
 ```
+
+## Logo files
+
+`brand/` holds the SEGMENT logo on its own (`segment-mark-*`) and with the SEGMENT wordmark (`segment-logo-*`), in four colorways: `default` (indigo and teal), `greenwood`, `emory` and `unc`. Each comes as an SVG in `brand/svg/` (lettering converted to outlines, so no font is needed) and a transparent PNG in `brand/png/`. `brand/segment-logo-kit-preview.png` shows them all.
+
+To regenerate the SVGs after changing colors or shapes (colorways are at the top of the script):
+
+```bash
+pip install fonttools
+python3 tools/render_brand_kit.py path/to/BarlowCondensed-SemiBold.ttf
+```
+
+Barlow Condensed is free from Google Fonts.
