@@ -11,6 +11,7 @@ This is a static design mockup (plain HTML/CSS/JS, no build step). Text highligh
 | `econsults.html` | Learn about eConsults: what they are, why to request one, how they work, best practices, eConsult vs. referral, where to submit in each state, FAQ |
 | `resources.html` | Resource library of downloadable PDFs, with filtering and search |
 | `about.html` | About us: mission, partner map (UNC Health, Greenwood Genetic Center, Emory Healthcare), research aims, team, funding |
+| `request-north-carolina.html`, `request-south-carolina.html`, `request-georgia.html` | State ordering pages, reached from the header's Request an eConsult menu: how to submit to UNC Health, Greenwood Genetic Center or Emory Healthcare |
 
 ## Run locally
 

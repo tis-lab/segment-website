@@ -18,6 +18,21 @@
     });
   }
 
+  // ---------- "Request an eConsult" state menu ----------
+  document.querySelectorAll(".nav-cta").forEach((wrap) => {
+    const button = wrap.querySelector("button");
+    const menu = wrap.querySelector(".cta-menu");
+    const setOpen = (open) => {
+      button.setAttribute("aria-expanded", String(open));
+      menu.hidden = !open;
+    };
+    button.addEventListener("click", () => setOpen(menu.hidden));
+    document.addEventListener("click", (e) => { if (!wrap.contains(e.target)) setOpen(false); });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !menu.hidden) { setOpen(false); button.focus(); }
+    });
+  });
+
   document.querySelectorAll("[data-year]").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
