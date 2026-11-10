@@ -946,7 +946,7 @@ p { margin: 0 0 1em; }
   position: relative;
   overflow: hidden;
 }
-.partner-tile::before, .state-card::before {
+.partner-tile::before {
   content: "";
   position: absolute;
   inset: 0 0 auto;
@@ -1062,43 +1062,41 @@ p { margin: 0 0 1em; }
   text-align: center;
 }
 
-.state-picker { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.state-card {
+/* One pill per state, each leading to that state's ordering page */
+.state-pills { display: flex; flex-wrap: wrap; gap: 14px; }
+.state-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px 14px 18px;
   background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
+  border: 1.5px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 }
-.state-card .state-name {
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 12px;
-}
-.state-card .wordmark { margin-bottom: 14px; }
-.state-card p { color: var(--muted); font-size: 0.95rem; }
-.state-card .route { font-size: 0.88rem; color: var(--ink-2); background: var(--canvas); border-radius: 10px; padding: 10px 12px; margin: 0 0 18px; }
-.state-card .btn { margin-top: auto; align-self: flex-start; }
+.state-pill:hover, .state-pill:focus-visible { color: var(--ink); border-color: var(--p); box-shadow: var(--shadow-sm); transform: translateY(-1px); }
+.state-pill .dot { flex: none; width: 12px; height: 12px; border-radius: 50%; background: var(--p); }
+.state-pill strong { font-size: 1.02rem; font-weight: 600; }
+.state-pill .partner { font-size: 0.9rem; color: var(--muted); }
+.state-pill .arrow { font-weight: 600; color: var(--p); }
 .btn[aria-disabled="true"] { background: var(--canvas-2); color: var(--muted); cursor: not-allowed; }
 
 @media (max-width: 1020px) {
   .steps.five { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 860px) {
-  .what-grid, .practice-grid, .state-picker { grid-template-columns: 1fr; gap: 32px; }
+  .what-grid, .practice-grid { grid-template-columns: 1fr; gap: 32px; }
   .benefits { grid-template-columns: 1fr; }
   .benefit, .benefit:nth-child(4), .benefit:nth-child(5) { grid-column: auto; }
   .steps.five { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
   .compare, .steps.five { grid-template-columns: 1fr; }
-  .benefit, .help-card, .state-card { padding: 24px; }
+  .benefit, .help-card { padding: 24px; }
+  .state-pill { width: 100%; }
+  .state-pill .arrow { margin-left: auto; }
 }
 
 /* ---------- About page ---------- */
